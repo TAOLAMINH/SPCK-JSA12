@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href=".css">
+    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="stylesheet" href="app.js">
+    <title>login</title>
+</head>
+<body>
+    <h1>Đăng nhập</h1>
+    <form action="#" method="post" onsubmit="return validateForm()">
+        <label for="firstName">Tên đăng nhập:</label>
+        <input type="text" id="firstName" name="firstName" required>
+    
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password" required minlength="8">
+    
+        <input type="submit" value="Submit">
+      </form>
+      <p>Chưa có tài khoản? <a href="signup.html">Đăng ký ngay</a></p>
+
+</body>
+</html>
