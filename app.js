@@ -1,33 +1,23 @@
 const searchInput = document.getElementById("search-input")
-const dishname = document.querySelector(".dish-name")
-const dishtype = document.querySelector(".dish-cuisine")
-const disingredients = document.querySelector(".dish-ingredients")
+const dish_name = document.getElementById("dish-name")
+const dish_origin = document.getElementById("dish-origin")
+const dish_instructions = document.getElementById("dish-instructions")
+const dish_ingredients = document.getElementById("dish-ingredients")
 searchInput.addEventListener("change", (event) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${event.target.value}`)
         .then(response => response.json())
         .then((data) => {
-          for (item of data.meals) {
-            let meals = document.createElement("div")
-            let img = document.createElement("img")
-            let categories = document.createElement("div")
-            let disharea = document.createElement("div")
-            let dishinstruction = document.createElement("div")
-            img.src = item.strMealThumb
-          
-            let name = document.createElement("div")
-            name.innerHTML = item.strMeal
-            categories.innerHTML = item.strCategory
-            disharea.innerHTML = item.strArea
-            dishinstruction.innerHTML = item.strInstructions
-
-
-            
-
-            meals.appendChild(img)
-            meals.appendChild(name)
-            meals.appendChild(categories)
-            meals.appendChild(disharea)
-            meals.appendChild(dishinstruction)
-        }
+          dish_name.innerHTML = data.meals[0].strMeal
+          dish_origin.innerHTML = data.meals[0].strArea
+          dish_instructions.innerHTML = data.meals[0].strInstructions
+          let ingredients = ""
+          for (let i = 1; i <= 20; i++){
+            var strIngredient = "strIngredient" + String(i)  
+            if (data.meals[0][strIngredient] != '')
+            {
+              ingredients += data.meals[0][strIngredient] + "; "
+            }
+          }
+          dish_ingredients.innerHTML = ingredients
         })
 })

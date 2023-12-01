@@ -1,5 +1,5 @@
 body {
-    background-image: url('food.jpg');
+    background-image: url('food.png');
     background-size: cover; 
 }
 body {
@@ -11,7 +11,7 @@ body {
   }
   h1 {
     text-align: center;
-    color: black;
+    color: white;
   }
 
   form {
