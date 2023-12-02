@@ -1,55 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
     background-image: url('food.png');
-    background-size: cover; 
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
 }
-body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-  }
-  p {
-    text-align: center;
-  }
-  h1 {
-    text-align: center;
-    color: white;
-  }
 
-  form {
-    width: 400px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+h1 {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-  label {
+form {
+    width: 340px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+label {
     display: block;
-    margin-bottom: 10px;
-    color: #666;
-  }
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+}
 
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 8px;
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
 
-  input[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #333;
-    color: #fff;
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 1px 6px rgba(76, 175, 80, 0.3);
+}
+
+input[type="submit"] {
+    width: calc(100% - 24px);
+    padding: 12px;
     border: none;
     border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-  }
+    transition: background-color 0.3s;
+}
 
-  input[type="submit"]:hover {
-    background-color: #555;
-  }
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
+/* Adjustments for the signup link */
+p {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+p:hover {
+    color: #bbbbbb;
+}
